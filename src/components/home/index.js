@@ -17,7 +17,7 @@ const Home = () => {
   }, []);
   return (
     <div className="container">
-      {console.log(parkedNFTs)}
+      {parkedNFTs}
       <div className="home-wrapper">
         <h2 className="subtitle text-center">
           coordinated-crypto-art-skunk-pools
