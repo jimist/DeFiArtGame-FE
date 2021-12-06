@@ -1,0 +1,33 @@
+.header-container {
+  padding-top: 30px;
+  text-align: right;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-end;
+
+  button {
+    margin-right: 1rem;
+  }
+  .btn-metamask {
+    border: 1px solid #fa7139;
+    background: #fa7139;
+    color: #ffffff;
+    border-radius: 50px;
+    padding: 10px 30px;
+    font-weight: 600;
+
+    img {
+      margin-right: 15px;
+    }
+  }
+}
+
+.btn-metamask-disconnect {
+  border: 1px solid #fa7139;
+  background: #fa7139;
+  color: #ffffff;
+  border-radius: 50px;
+  padding: 10px 30px;
+  font-weight: 600;
+}
