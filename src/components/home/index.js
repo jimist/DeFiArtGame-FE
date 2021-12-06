@@ -17,7 +17,6 @@ const Home = () => {
   }, []);
   return (
     <div className="container">
-      {parkedNFTs}
       <div className="home-wrapper">
         <h2 className="subtitle text-center">
           coordinated-crypto-art-skunk-pools
@@ -25,7 +24,7 @@ const Home = () => {
         <h1 className="title text-center">DeFi Art Game</h1>
         <p className="text text-center">Current Rewards Pool:</p>
         <div className="row align-items-center justify-content-center px-2">
-          {parkedNFTs.map((nft) => {
+          {parkedNFTs && parkedNFTs.map((nft) => {
             return (
               <div
                 key={nft.token_id}
