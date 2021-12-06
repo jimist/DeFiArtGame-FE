@@ -24,6 +24,7 @@ const Home = () => {
         <h1 className="title text-center">DeFi Art Game</h1>
         <p className="text text-center">Current Rewards Pool:</p>
         <div className="row align-items-center justify-content-center px-2">
+          {console.log(parkedNFTs)}
           {parkedNFTs && parkedNFTs.map((nft) => {
             return (
               <div
