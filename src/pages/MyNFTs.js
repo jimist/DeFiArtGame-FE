@@ -229,7 +229,7 @@ const MyNFTs = () => {
       )}
       {console.log(process.env.REACT_APP_API_URL)}
       <div className="row align-items-center justify-content-center px-2">
-        {assets.map((asset) => {
+        {assets && assets.map((asset) => {
           return (
             <div
               key={asset.token_id}
