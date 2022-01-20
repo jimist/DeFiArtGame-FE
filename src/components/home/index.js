@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API_URL } from "../../lib/constants";
 
 // import styles
 import "./style.scss";
@@ -9,7 +10,7 @@ const Home = () => {
   const [parkedNFTs, setParkedNFTs] = useState([]);
   useEffect(() => {
     const homePageData = async () => {
-      const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/get`);
+      const { data } = await axios.get(`${API_URL}/get`);
       setParkedNFTs(data);
     };
 

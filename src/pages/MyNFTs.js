@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useStoreState } from "easy-peasy";
 import axios from "axios";
-
+import { API_URL } from "../lib/constants";
 import { ethers } from "ethers";
 
 const txAccounts = {
@@ -90,7 +90,7 @@ const MyNFTs = () => {
       );
 
       if (+txConfirmation.data.status === 1) {
-        await axios.post(`${process.env.REACT_APP_API_URL}/add`, {
+        await axios.post(`${API_URL}/add`, {
           nft_yield: +25,
           deposit: +level,
           nft_reference: imageUrl,
@@ -135,7 +135,7 @@ const MyNFTs = () => {
       );
 
       if (+txConfirmation.data.status === 1) {
-        await axios.post(`${process.env.REACT_APP_API_URL}/add`, {
+        await axios.post(`${API_URL}/add`, {
           nft_yield: +25,
           deposit: +level,
           nft_reference: imageUrl,
@@ -183,7 +183,7 @@ const MyNFTs = () => {
       );
 
       if (+txConfirmation.data.status === 1) {
-        await axios.post(`${process.env.REACT_APP_API_URL}/add`, {
+        await axios.post(`${API_URL}/add`, {
           nft_yield: +25,
           deposit: +level,
           nft_reference: imageUrl,
@@ -227,9 +227,10 @@ const MyNFTs = () => {
       ) : (
         ""
       )}
-      {console.log(process.env.REACT_APP_API_URL)}
+      {console.log(API_URL)}
       <div className="row align-items-center justify-content-center px-2">
         {assets && assets.map((asset) => {
+          console.log(asset);
           return (
             <div
               key={asset.token_id}
