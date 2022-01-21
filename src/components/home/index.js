@@ -12,12 +12,15 @@ const Home = () => {
     const homePageData = async () => {
       const { data } = await axios.get(`${API_URL}/nfts/get`);
       const nftData = data.data;
+      setParkedNFTs(nftData);
       nftData.forEach(async (nft) => {
         axios.get(`https://api.opensea.io/api/v1/asset/${nft.reference.contractAddress}/${nft.reference.tokenId}?format=json`).then((resp) => {
-          setParkedNFTs((current) =>
-            current.concat(
-              { ...nft, image: resp.data.image_url, name: resp.data.name, description: resp.data.description }
-            ))
+          setParkedNFTs((current) => {
+            let newData = current;
+            const idx = newData.findIndex((n) => n.id === nft.id);
+            newData[idx] = { ...nft, image: resp.data.image_url, name: resp.data.name, description: resp.data.description }
+            return newData;
+          })
         })
       });
     };
