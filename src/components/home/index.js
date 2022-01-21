@@ -15,12 +15,11 @@ const Home = () => {
       setParkedNFTs(nftData);
       nftData.forEach(async (nft) => {
         axios.get(`https://api.opensea.io/api/v1/asset/${nft.reference.contractAddress}/${nft.reference.tokenId}?format=json`).then((resp) => {
-          setParkedNFTs((current) => {
-            let newData = current;
-            const idx = newData.findIndex((n) => n.id === nft.id);
-            newData[idx] = { ...nft, image: resp.data.image_url, name: resp.data.name, description: resp.data.description }
-            return newData;
-          })
+          setParkedNFTs([]);
+          let newNftData = nftData;
+          const idx = newNftData.findIndex((n) => n.id === nft.id);
+          newNftData[idx] = { ...nft, image: resp.data.image_url, name: resp.data.name, description: resp.data.description }
+          setParkedNFTs(newNftData)
         })
       });
     };
@@ -36,7 +35,6 @@ const Home = () => {
         <h1 className="title text-center">DeFi Art Game</h1>
         <p className="text text-center">Current Rewards Pool:</p>
         <div className="row align-items-center justify-content-center px-2">
-          {console.log(parkedNFTs)}
           {parkedNFTs && parkedNFTs.map((nft) => {
             return (
               <div
