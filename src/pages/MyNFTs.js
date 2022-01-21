@@ -14,7 +14,8 @@ const MyNFTs = () => {
   const currentAccount = useStoreState((state) => state.wallet.account);
   const [assets, setAssets] = useState([]);
   const [network, setNetwork] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
+  const [tokenId, setTokenId] = useState("");
+  const [contractAddress, setContractAddress] = useState("");
   const [error, setError] = useState("");
   const [level, setLevel] = useState(0);
   const [success, setSuccess] = useState(false);
@@ -90,10 +91,11 @@ const MyNFTs = () => {
       );
 
       if (+txConfirmation.data.status === 1) {
-        await axios.post(`${API_URL}/add`, {
-          nft_yield: +25,
+        await axios.post(`${API_URL}/nfts/create`, {
+          yield: +25,
           deposit: +level,
-          nft_reference: imageUrl,
+          contractAddress,
+          tokenId
         });
         setSuccess(true);
       }
@@ -135,10 +137,11 @@ const MyNFTs = () => {
       );
 
       if (+txConfirmation.data.status === 1) {
-        await axios.post(`${API_URL}/add`, {
-          nft_yield: +25,
+        await axios.post(`${API_URL}/nfts/create`, {
+          yield: +25,
           deposit: +level,
-          nft_reference: imageUrl,
+          contractAddress,
+          tokenId
         });
         setSuccess(true);
       }
@@ -183,10 +186,11 @@ const MyNFTs = () => {
       );
 
       if (+txConfirmation.data.status === 1) {
-        await axios.post(`${API_URL}/add`, {
-          nft_yield: +25,
+        await axios.post(`${API_URL}/nfts/create`, {
+          yield: +25,
           deposit: +level,
-          nft_reference: imageUrl,
+          contractAddress,
+          tokenId
         });
         setSuccess(true);
       }
@@ -286,7 +290,8 @@ const MyNFTs = () => {
                       <button
                         className="btn btn-info"
                         onClick={() => {
-                          setImageUrl(asset.image_url);
+                          setTokenId(asset.token_id);
+                          setContractAddress(asset.asset_contract.address);
                           setNetwork("ethereum");
                         }}
                       >
@@ -309,7 +314,8 @@ const MyNFTs = () => {
                       <button
                         className="btn btn-primary"
                         onClick={() => {
-                          setImageUrl(asset.image_url);
+                          setTokenId(asset.token_id);
+                          setContractAddress(asset.asset_contract.address);
                           setNetwork("polygon");
                         }}
                       >
@@ -318,7 +324,8 @@ const MyNFTs = () => {
                       <button
                         className="btn btn-secondary mx-1"
                         onClick={() => {
-                          setImageUrl(asset.image_url);
+                          setTokenId(asset.token_id);
+                          setContractAddress(asset.asset_contract.address);
                           setNetwork("avax");
                         }}
                       >
