@@ -1,8 +1,8 @@
 {
     "name": "defi-art-game",
     "version": "0.1.0",
-    "homepage": "https://defiartgame.com/",
-    "proxy": "https://5455536.defiartgame.com:5000",
+    "homepage": "",
+    "proxy": "",
     "private": true,
     "dependencies": {
         "axios": "^0.22.0",
