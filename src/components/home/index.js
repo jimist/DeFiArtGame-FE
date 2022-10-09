@@ -32,7 +32,7 @@ const Home = () => {
         <h2 className="subtitle text-center">
           coordinated-crypto-art-skunk-pools
         </h2>
-        <h1 className="title text-center">DeFi Art Game</h1>
+        <h1 className="title text-center">Coder Economy</h1>
         <p className="text text-center">Current Rewards Pool:</p>
         <div className="row align-items-center justify-content-center px-2">
           {parkedNFTs && parkedNFTs.map((nft) => {
