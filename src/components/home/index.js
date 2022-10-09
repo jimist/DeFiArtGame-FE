@@ -33,7 +33,7 @@ const Home = () => {
           coordinated-crypto-art-skunk-pools
         </h2>
         <h1 className="title text-center">Coder Economy</h1>
-        <p className="text text-center">Current Rewards Pool:</p>
+        <p className="text text-center">Building a Culture of Reputation Wealth and The Next Working Commons</p>
         <div className="row align-items-center justify-content-center px-2">
           {parkedNFTs && parkedNFTs.map((nft) => {
             return (
