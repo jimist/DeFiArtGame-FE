@@ -28,8 +28,8 @@ const Header = () => {
         div className = "col-md-4" >
         <
         img src = { logo }
-        /> < /div >
-        <
+        alt = "logo" /
+        > < /div > <
         div className = "col-md-8" > <
         button className = "btn btn-success"
         onClick = {
