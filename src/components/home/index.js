@@ -30,10 +30,10 @@ const Home = () => {
     <div className="container">
       <div className="home-wrapper">
         <h2 className="subtitle text-center">
-          Replicating Value Flow in The Next Distributed Internet
+          **
         </h2>
-        <h1 className="title text-center">Coder Economy</h1>
-        <p className="text text-center">Building a Culture of Reputation Wealth and The Next Working Commons</p>
+        <h1 className="title text-center">**</h1>
+        <p className="text text-center">**</p>
         <div className="row align-items-center justify-content-center px-2">
           {parkedNFTs && parkedNFTs.map((nft) => {
             return (
