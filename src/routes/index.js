@@ -9,20 +9,33 @@ import Header from "../components/header";
 import MyNFTs from "../pages/MyNFTs";
 
 const MainRouter = () => {
-  return (
-    <>
-      <Router>
-        <Header />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/artists" component={Artists} />
-        <Route exact path="/buyers" component={Buyers} />
-        <Route exact path="/liquidity" component={Liquidity} />
-        <Route exact path="/mynfts">
-          <MyNFTs />
-        </Route>
-      </Router>
-    </>
-  );
+    return ( <
+        >
+        <
+        Router >
+        <
+        Header / >
+        <
+        Route exact path = "/"
+        component = { Home }
+        /> <
+        Route exact path = "/artists"
+        component = { Artists }
+        /> <
+        Route exact path = "/buyers"
+        component = { Buyers }
+        /> <
+        Route exact path = "/liquidity"
+        component = { Liquidity }
+        /> <
+        Route exact path = "/mynfts" >
+        <
+        MyNFTs / >
+        <
+        /Route> < /
+        Router > <
+        />
+    );
 };
 
 export default MainRouter;
