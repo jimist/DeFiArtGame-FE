@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
-//import { useHistory } from "react-router-dom";
-import { useStoreActions, useStoreState } from "easy-peasy";
+import { useHistory } from "react-router-dom";
+import { useStoreActions } from "easy-peasy";
 // import style
 import "./style.scss";
 
@@ -10,10 +10,11 @@ import logo from '../../assets/logo.png';
 let home = "/";
 let about = "mynfts";
 const Header = () => {
-    //const history = useHistory();
+    const history = useHistory();
     const setCurrentAccount = useStoreActions((actions) => actions.wallet.update);
     //const clearAccount = useStoreActions((actions) => actions.wallet.clear);
     //const currentAccount = useStoreState((state) => state.wallet.account);
+
     const handleClick = async() => {
         if (!window.ethereum) return window.open("https://metamask.io/download");
 
@@ -27,12 +28,16 @@ const Header = () => {
         div className = "container" >
         <
         a className = "navbar-brand"
+        onClick = {
+            () => history.push("/")
+        }
         href = { home } >
         <
         img src = { logo }
         alt = "logo" /
         >
-        < /
+        <
+        /
         a >
         <
         button className = "navbar-toggler"
@@ -55,10 +60,12 @@ const Header = () => {
         className = "nav-link nav_link" > About < /a> < /li > < /
         ul > <
         a href = "https://codereconomy.io/"
+        onClick = { handleClick }
         className = "last_svg d-flex" >
         <
         img src = { MetaMask }
-        / > <
+        alt = "MetaMask" /
+        > <
         span > Download MetaMask < /span> < /
         a > <
         /div>

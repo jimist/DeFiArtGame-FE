@@ -4,7 +4,7 @@ import { API_URL } from "../../lib/constants";
 
 // import styles
 import "./style.scss";
-//import meter from "../../assets/meter.jpg";
+import meter from "../../assets/meter.jpg";
 import img from "../../assets/img.PNG";
 import footer from "../../assets/footter.svg";
 import footer1 from "../../assets/footer1.svg";
@@ -32,7 +32,56 @@ const Home = () => {
 
         homePageData();
     }, []);
-    return ( < div > < section className = "main_first" >
+    return ( < div >
+
+        <
+        div className = "row align-items-center justify-content-center px-2" > {
+            parkedNFTs && parkedNFTs.map((nft) => {
+                return ( <
+                    div key = { nft.tokenId }
+                    className = "col col-12 col-md-6 col-lg-4 mb-4 mh-30 h-auto" >
+                    <
+                    div className = "card h-75" >
+                    <
+                    div className = "card-top text-center" >
+                    <
+                    h3 > { nft.name } < /h3> <
+                    img src = { nft.image }
+                    alt = "nft"
+                    className = "img-fluid w-100 px-1" /
+                    >
+                    <
+                    /div>
+
+                    <
+                    div className = "card-body mb-4" >
+                    <
+                    div className = "mb-4" >
+                    <
+                    p > Date Parked: { new Date(nft.created).toDateString() } < /p> <
+                    p > Garage Deposit: $ { nft.deposit } < /p> <
+                    p > Garage Yield: { nft.yield } % < /p> < /
+                    div >
+
+                    <
+                    div className = "mb-4 w-100" >
+                    <
+                    img src = { meter }
+                    className = "img-thumbnail"
+                    alt = "parking meter" /
+                    >
+                    <
+                    /div> < /
+                    div > <
+                    /div> < /
+                    div >
+                );
+            })
+        } <
+        /div>
+
+        <
+        section className = "main_first" >
         <
         div className = "site_container" >
         <
@@ -45,13 +94,13 @@ const Home = () => {
         Merit based work commons
         for builders and communities Building a Culture of Reputation Wealth and The Next Working Commons <
         /p> <
-        a href = "#" > VISIT THE DEVELOPER DOCS < /a> < /
+        a href = "/" > VISIT THE DEVELOPER DOCS < /a> < /
         div > <
         div className = "col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12" >
         <
         img src = { img }
-        alt = "img"
-        alt = "" / >
+        alt = "img" /
+        >
         <
         /div> < /
         div > <
@@ -68,8 +117,8 @@ const Home = () => {
         div className = "col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12" >
         <
         img src = { img }
-        alt = "img"
-        alt = "" / >
+        alt = "img" /
+        >
         <
         /div> <
         div className = "col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12" >
@@ -79,7 +128,7 @@ const Home = () => {
         Easily adapt applications quickly to new communities Allowing coders to earn reputation
         for their contributions <
         /p> <
-        a href = "#" > VISIT THE DEVELOPER DOCS < /a> < /
+        a href = "/" > VISIT THE DEVELOPER DOCS < /a> < /
         div > <
         /div> < /
         div > <
@@ -99,13 +148,13 @@ const Home = () => {
         p >
         Providing coders and builders the opportunity to construct their professional reputation and earn scalable wealth. <
         /p> <
-        a href = "#" > VISIT THE DEVELOPER DOCS < /a> < /
+        a href = "/" > VISIT THE DEVELOPER DOCS < /a> < /
         div > <
         div className = "col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12" >
         <
         img src = { img }
-        alt = "img"
-        alt = "" / >
+        alt = "img" /
+        >
         <
         /div> < /
         div > <
@@ -122,8 +171,7 @@ const Home = () => {
         div className = "col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12" >
         <
         img src = { footer }
-        alt = "footer"
-        alt = "" / >
+        alt = "footer" / >
         <
         h2 > Copyright© 2022 Coder Economy.All rights reserved. < /h2> < /
         div > <
@@ -132,22 +180,21 @@ const Home = () => {
         div className = "social" >
         <
         img src = { footer1 }
-        alt = "footer1"
-        alt = "" / >
+        alt = "footer1" / >
         <
         /div> <
         div className = "social" >
         <
         img src = { footer2 }
-        alt = "footer2"
-        alt = "" / >
+        alt = "footer2" /
+        >
         <
         /div> <
         div className = "social" >
         <
         img src = { footer3 }
-        alt = "footer3"
-        alt = "" / >
+        alt = "footer3" /
+        >
         <
         /div> < /
         div > <
