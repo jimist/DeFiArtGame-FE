@@ -10,7 +10,7 @@ import logo from '../../assets/logo.png';
 let home = "/";
 let about = "mynfts";
 const Header = () => {
-    const history = useHistory();
+    //const history = useHistory();
     const setCurrentAccount = useStoreActions((actions) => actions.wallet.update);
     const clearAccount = useStoreActions((actions) => actions.wallet.clear);
     const currentAccount = useStoreState((state) => state.wallet.account);
