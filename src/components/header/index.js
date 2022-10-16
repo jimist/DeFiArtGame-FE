@@ -5,8 +5,10 @@ import { useStoreActions, useStoreState } from "easy-peasy";
 import "./style.scss";
 
 // import images
-import Fox from "../../assets/fox.svg";
+import MetaMask from "../../assets/header_btn.svg";
 import logo from '../../assets/logo.png';
+let home = "/";
+let about = "mynfts";
 const Header = () => {
     const history = useHistory();
     const setCurrentAccount = useStoreActions((actions) => actions.wallet.update);
@@ -20,57 +22,48 @@ const Header = () => {
         setCurrentAccount(account.toString());
     };
     return ( <
-        div className = "container mb-4" >
-
+        nav className = "navbar navbar-expand-sm navbar-dark" >
         <
-        div className = "header-container" >
+        div className = "container" >
         <
-        div className = "col-md-4" >
+        a className = "navbar-brand"
+        href = { home } >
         <
         img src = { logo }
-        alt = "logo" /
-        > < /div > <
-        div className = "col-md-8" > <
-        button className = "btn btn-success"
-        onClick = {
-            () => history.push("/")
-        } >
-        Home <
+        / > < /
+        a >
+        <
+        button className = "navbar-toggler"
+        type = "button" >
+        Menu <
         /button> <
-        button className = "btn btn-success"
-        onClick = {
-            () => history.push("/mynfts")
-        } >
-        About Us <
-        /button>
+        div className = "collapse navbar-collapse"
+        id = "navbarNav" >
+        <
+        ul className = "navbar-nav me-auto mb-2 mb-lg-0" >
+        <
+        li className = "nav-item" >
+        <
+        a className = "nav-link active"
+        href = { home } > Home < /a> < /
+        li > <
+        li className = "nav-item" >
+        <
+        a a href = { about }
+        className = "nav-link nav_link" > About < /a> < /li > < /
+        ul > <
+        a href = "https://codereconomy.io/"
+        className = "last_svg d-flex" >
+        <
+        img src = { MetaMask }
+        / > <
+        span > Download MetaMask < /span> < /
+        a > <
+        /div>
 
-        { console.log(currentAccount) } {
-            currentAccount.length > 0 ? ( <
-                button className = "btn-metamask-disconnect"
-                onClick = {
-                    () => {
-                        clearAccount();
-                    }
-                } >
-                Disconnect <
-                /button>
-            ) : ( <
-                button className = "btn-metamask"
-                onClick = { handleClick } >
-                <
-                img src = { Fox }
-                alt = "metamask-img"
-                className = "img-fluid pr-5"
-                width = "25" /
-                >
-
-                { window.ethereum ? "Connect to MetaMask" : "Download MetaMask" } <
-                /button>
-            )
-        } <
+        <
         /div> < /
-        div > < /
-        div >
+        nav >
     );
 };
 
