@@ -1,5 +1,5 @@
 import { ethers } from "ethers";
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 import { useStoreActions, useStoreState } from "easy-peasy";
 // import style
 import "./style.scss";
@@ -12,8 +12,8 @@ let about = "mynfts";
 const Header = () => {
     //const history = useHistory();
     const setCurrentAccount = useStoreActions((actions) => actions.wallet.update);
-    const clearAccount = useStoreActions((actions) => actions.wallet.clear);
-    const currentAccount = useStoreState((state) => state.wallet.account);
+    //const clearAccount = useStoreActions((actions) => actions.wallet.clear);
+    //const currentAccount = useStoreState((state) => state.wallet.account);
     const handleClick = async() => {
         if (!window.ethereum) return window.open("https://metamask.io/download");
 
@@ -30,7 +30,9 @@ const Header = () => {
         href = { home } >
         <
         img src = { logo }
-        / > < /
+        alt = "logo" /
+        >
+        < /
         a >
         <
         button className = "navbar-toggler"

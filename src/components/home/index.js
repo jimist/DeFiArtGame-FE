@@ -4,7 +4,7 @@ import { API_URL } from "../../lib/constants";
 
 // import styles
 import "./style.scss";
-import meter from "../../assets/meter.jpg";
+//import meter from "../../assets/meter.jpg";
 import img from "../../assets/img.PNG";
 import footer from "../../assets/footter.svg";
 import footer1 from "../../assets/footer1.svg";
@@ -50,6 +50,7 @@ const Home = () => {
         div className = "col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12" >
         <
         img src = { img }
+        alt = "img"
         alt = "" / >
         <
         /div> < /
@@ -67,6 +68,7 @@ const Home = () => {
         div className = "col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12" >
         <
         img src = { img }
+        alt = "img"
         alt = "" / >
         <
         /div> <
@@ -102,6 +104,7 @@ const Home = () => {
         div className = "col-xxl-6 col-xl-6 col-lg-12 col-md-12 col-sm-12" >
         <
         img src = { img }
+        alt = "img"
         alt = "" / >
         <
         /div> < /
@@ -119,6 +122,7 @@ const Home = () => {
         div className = "col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12" >
         <
         img src = { footer }
+        alt = "footer"
         alt = "" / >
         <
         h2 > Copyright© 2022 Coder Economy.All rights reserved. < /h2> < /
@@ -128,18 +132,21 @@ const Home = () => {
         div className = "social" >
         <
         img src = { footer1 }
+        alt = "footer1"
         alt = "" / >
         <
         /div> <
         div className = "social" >
         <
         img src = { footer2 }
+        alt = "footer2"
         alt = "" / >
         <
         /div> <
         div className = "social" >
         <
         img src = { footer3 }
+        alt = "footer3"
         alt = "" / >
         <
         /div> < /
