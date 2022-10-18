@@ -68,7 +68,7 @@ div#navbarNav {
 .navbar .last_svg {
     width: 30%;
     height: 100%;
-    background: rgba(255, 255, 255, .1);
+    background: #aaaaff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,8 +76,9 @@ div#navbarNav {
     font-weight: 600;
     font-family: 'Inter';
     text-decoration: none;
+    border-radius: 20px;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: #000;
 }
 
 .navbar .last_svg span {
